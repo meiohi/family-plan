@@ -1,7 +1,7 @@
 services:
   api:
     image: ${FAMILY_PLAN_IMAGE:-ghcr.io/j2st1n/family-plan:latest}
-    container_name: family-plan-api
+    container_name: family-plan-test-api
     restart: unless-stopped
     ports:
       - "127.0.0.1:8000:8000"
@@ -14,7 +14,7 @@ services:
 
   db:
     image: postgres:16-alpine
-    container_name: family-plan-db
+    container_name: family-plan-test-db
     restart: unless-stopped
     environment:
       POSTGRES_DB: family_plan
